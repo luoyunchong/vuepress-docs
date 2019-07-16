@@ -1,4 +1,4 @@
-yarn build
+
 cd docs/.vuepress/dist
 git config --global user.email "luoyunchong@foxmail.com"
 git config --global user.name "luoyunchong"
