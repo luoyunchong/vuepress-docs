@@ -1,0 +1,32 @@
+@require './config'
+.arrow
+  display inline-block
+  width 6px
+  height 6px
+  &.up
+    border-left 4px solid transparent
+    border-right 4px solid transparent
+    border-bottom 6px solid $arrowBgColor
+  &.down
+    border-top 1px solid #3683D6
+    border-right 1px solid #3683D6
+    transition all 0.3s
+    transform rotate(-45deg)
+    margin-bottom -2px
+    margin-left 10px
+    position absolute
+    left 85%
+    top 45%
+  &.right
+    border-top 1px solid #656565
+    border-right 1px solid #656565
+    transform rotate(135deg)
+    margin-left 10px
+    transition all 0.3s
+    position absolute
+    left 85%
+    top 35%
+  &.left
+    border-top 4px solid transparent
+    border-bottom 4px solid transparent
+    border-right 6px solid $arrowBgColor
