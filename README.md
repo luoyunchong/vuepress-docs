@@ -16,20 +16,20 @@
 
 ## 安装依赖包，开发运行
 ~~~
-yarn install
-yarn dev
+PS D:\code\github\vuepress-docs>yarn install
+PS D:\code\github\vuepress-docs>yarn dev
 ~~~
 
 如果不能正常运行，就删除 yarn.lock、node_modules文件夹,再重新执行上面的命令
 
 ## 生成发布包
-```cmd
-yarn build 
+```ps1
+PS D:\code\github\vuepress-docs>yarn build 
 ```
 
 ## 发布至github pages 中的gh-pages分支
-```
-.\deploy.ps1
+```ps1
+PS D:\code\github\vuepress-docs>.\deploy.ps1
 ```
 
 .sh 也不懂，关键我本地是windows，不能正常执行，git bash 也许可以 
