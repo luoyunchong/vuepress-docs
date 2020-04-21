@@ -15,7 +15,7 @@
 ## 完整文档
 
 - [https://luoyunchong.github.io/vuepress-docs/](https://luoyunchong.github.io/vuepress-docs)
-- [https://igeekfan.gitee.io/vuepress-docs/](https://igeekfan.gitee.io/vuepress-docs/)
+
 
 ## LinCMS
 Lin-CMS 是林间有风团队经过大量项目实践所提炼出的一套内容管理系统框架，前后端分离的完整解决方案。
