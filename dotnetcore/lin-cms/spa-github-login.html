@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="referrer" content="never">
+    <title>GitHub第三方授权登录 | IGeekFan的文档</title>
+    <meta name="description" content="">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f62432d3079a350db0193368fa897809";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <link rel="icon" href="/vuepress-docs/logo.png">
+    
+    <link rel="preload" href="/vuepress-docs/assets/css/styles.ec2f6e9b.css" as="style"><link rel="preload" href="/vuepress-docs/assets/js/app.ec2f6e9b.js" as="script"><link rel="preload" href="/vuepress-docs/assets/js/18.97b5de89.js" as="script"><link rel="prefetch" href="/vuepress-docs/assets/css/2.styles.7e867c4e.css"><link rel="prefetch" href="/vuepress-docs/assets/css/3.styles.e9745365.css"><link rel="prefetch" href="/vuepress-docs/assets/css/4.styles.6c1c8010.css"><link rel="prefetch" href="/vuepress-docs/assets/css/5.styles.82af18d5.css"><link rel="prefetch" href="/vuepress-docs/assets/js/1.e59787bb.js"><link rel="prefetch" href="/vuepress-docs/assets/js/10.3aef6520.js"><link rel="prefetch" href="/vuepress-docs/assets/js/11.9f5d4ce3.js"><link rel="prefetch" href="/vuepress-docs/assets/js/12.b9ca9a1d.js"><link rel="prefetch" href="/vuepress-docs/assets/js/13.a66f1786.js"><link rel="prefetch" href="/vuepress-docs/assets/js/14.d6b910a3.js"><link rel="prefetch" href="/vuepress-docs/assets/js/15.a169035c.js"><link rel="prefetch" href="/vuepress-docs/assets/js/16.3dd955fe.js"><link rel="prefetch" href="/vuepress-docs/assets/js/17.930ad6d0.js"><link rel="prefetch" href="/vuepress-docs/assets/js/19.104c4105.js"><link rel="prefetch" href="/vuepress-docs/assets/js/2.7e867c4e.js"><link rel="prefetch" href="/vuepress-docs/assets/js/20.dc33c1d8.js"><link rel="prefetch" href="/vuepress-docs/assets/js/3.e9745365.js"><link rel="prefetch" href="/vuepress-docs/assets/js/4.6c1c8010.js"><link rel="prefetch" href="/vuepress-docs/assets/js/5.82af18d5.js"><link rel="prefetch" href="/vuepress-docs/assets/js/6.cb54c925.js"><link rel="prefetch" href="/vuepress-docs/assets/js/7.44ba2142.js"><link rel="prefetch" href="/vuepress-docs/assets/js/8.f4c00805.js"><link rel="prefetch" href="/vuepress-docs/assets/js/9.83b8ffee.js">
+    <link rel="stylesheet" href="/vuepress-docs/assets/css/styles.ec2f6e9b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" style="position:relative;"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <div class="home-link router-link-active"><!----> <span class="site-name">IGeekFan的文档</span></div> <div class="search" style="max-width:-300px;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" placeholder="回车搜索" value=""> <!----></div></div> <div class="links" style="max-width:-300px;"><nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-docs/" class="nav-link">简介</a></div><div class="nav-item"><a href="/vuepress-docs/dotnetcore/lin-cms/" class="nav-link router-link-active">lin-cms-dotnetcore起步</a></div><div class="nav-item"><a href="/vuepress-docs/colorui/docs/" class="nav-link">ColorUI指南</a></div><div class="nav-item"><a href="http://blog.igeekfan.cn/about/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/luoyunchong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-docs/" class="nav-link">简介</a></div><div class="nav-item"><a href="/vuepress-docs/dotnetcore/lin-cms/" class="nav-link router-link-active">lin-cms-dotnetcore起步</a></div><div class="nav-item"><a href="/vuepress-docs/colorui/docs/" class="nav-link">ColorUI指南</a></div><div class="nav-item"><a href="http://blog.igeekfan.cn/about/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/luoyunchong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav> <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>lin-cms-dotnetcore</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>开发者文档</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html" class="sidebar-link">开发起步</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#项目结构" class="sidebar-link">项目结构</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#类库使用介绍" class="sidebar-link">类库使用介绍</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#freesql" class="sidebar-link">FreeSql</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#identityserver4" class="sidebar-link">IdentityServer4</a></li></ul></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html" class="sidebar-link">依赖注入</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#scrutor" class="sidebar-link">Scrutor</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#serivce后缀服务注入di" class="sidebar-link">Serivce后缀服务注入DI</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#itransientdependency" class="sidebar-link">ITransientDependency</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#接口" class="sidebar-link">接口</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#模拟实现" class="sidebar-link">模拟实现</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#如何使用" class="sidebar-link">如何使用</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#统一注入" class="sidebar-link">统一注入</a></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html" class="sidebar-link">认证与授权</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html#认证与授权" class="sidebar-link">认证与授权</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html#认证鉴权相关" class="sidebar-link">认证鉴权相关</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html#jwt" class="sidebar-link">JWT</a></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html" class="active sidebar-link">GitHub第三方授权登录</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#github第三方授权登录" class="sidebar-link">GitHub第三方授权登录</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#aspnet-security-oauth-github" class="sidebar-link">AspNet.Security.OAuth.GitHub</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#github授权登录" class="sidebar-link">GitHub授权登录</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#net-core3-1" class="sidebar-link">.NET Core3.1</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#前后端分离的spa-配合第三方授权登录流程如下" class="sidebar-link">前后端分离的SPA 配合第三方授权登录流程如下</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#代码部署（简化）" class="sidebar-link">代码部署（简化）</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#为什么呢？？？" class="sidebar-link">为什么呢？？？</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#参考" class="sidebar-link">参考</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#demo-示例" class="sidebar-link">Demo  示例</a></li></ul></li></ul></div></li></ul></div> <div id="area" class="page"> <div class="content"><h2 id="github第三方授权登录"><a href="#github第三方授权登录" aria-hidden="true" class="header-anchor">#</a> GitHub第三方授权登录</h2> <p>使用SPA+.NET Core3.1实现 GitHub第三方授权登录 类似使用AspNet.Security.OAuth.GitHub，前端使用如下：VUE+Vue-Router+axios</p> <h2 id="aspnet-security-oauth-github"><a href="#aspnet-security-oauth-github" aria-hidden="true" class="header-anchor">#</a> AspNet.Security.OAuth.GitHub</h2> <ul><li>GitHub <a href="https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers" target="_blank" rel="noopener noreferrer">https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h2 id="github授权登录"><a href="#github授权登录" aria-hidden="true" class="header-anchor">#</a> GitHub授权登录</h2> <p>什么配置的过程不说了。。有一推。</p> <ul><li><a href="https://www.jianshu.com/p/78d186aeb526" target="_blank" rel="noopener noreferrer">GitHub 第三方登录<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://juejin.im/post/5dfb04cee51d45583a66c2f3" target="_blank" rel="noopener noreferrer">给你的网站添加第三方登录以及短信验证功能<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <p>下面为示例</p> <div class="language- extra-class"><pre class="language-text"><code>client_id:0be6b05fc717bfc4fb67
+client_secret:dcaced9f176afba64e89d88b9b06ffc4a887a609
+</code></pre></div><p>Get</p> <div class="language- extra-class"><pre class="language-text"><code>https://github.com/login/oauth/authorize?client_id=0be6b05fc717bfc4fb67&amp;redirect_uri=https://localhost:5001/signin-github
+</code></pre></div><p>会重定向到</p> <p><a href="https://localhost:5001/signin-github?code=07537a84d12bbae08361" target="_blank" rel="noopener noreferrer">https://localhost:5001/signin-github?code=07537a84d12bbae08361<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>这个code放到下面的请求中，获取access_token
+POST方式（PostMan去请求）</p> <div class="language- extra-class"><pre class="language-text"><code>https://github.com/login/oauth/access_token?client_id=0be6b05fc717bfc4fb67&amp;client_secret=dcaced9f176afba64e89d88b9b06ffc4a887a609&amp;code=07537a84d12bbae08361
+</code></pre></div><p>Get方式</p> <div class="language- extra-class"><pre class="language-text"><code>https://api.github.com/user?access_token=787506afa3271d077b98f18af56d7cfdc8db43b4
+</code></pre></div><p>然后就能获取用户信息</p> <div class="language- extra-class"><pre class="language-text"><code>{
+   &quot;login&quot;: &quot;luoyunchong&quot;,
+   &quot;id&quot;: 18613266,
+   &quot;node_id&quot;: &quot;MDQ6VXNlcjE4NjEzMjY2&quot;,
+   &quot;avatar_url&quot;: &quot;https://avatars1.githubusercontent.com/u/18613266?v=4&quot;,
+   &quot;gravatar_id&quot;: &quot;&quot;,
+   &quot;url&quot;: &quot;https://api.github.com/users/luoyunchong&quot;,
+   &quot;html_url&quot;: &quot;https://github.com/luoyunchong&quot;,
+   &quot;followers_url&quot;: &quot;https://api.github.com/users/luoyunchong/followers&quot;,
+   &quot;following_url&quot;: &quot;https://api.github.com/users/luoyunchong/following{/other_user}&quot;,
+   &quot;gists_url&quot;: &quot;https://api.github.com/users/luoyunchong/gists{/gist_id}&quot;,
+   &quot;starred_url&quot;: &quot;https://api.github.com/users/luoyunchong/starred{/owner}{/repo}&quot;,
+   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/luoyunchong/subscriptions&quot;,
+   &quot;organizations_url&quot;: &quot;https://api.github.com/users/luoyunchong/orgs&quot;,
+   &quot;repos_url&quot;: &quot;https://api.github.com/users/luoyunchong/repos&quot;,
+   &quot;events_url&quot;: &quot;https://api.github.com/users/luoyunchong/events{/privacy}&quot;,
+   &quot;received_events_url&quot;: &quot;https://api.github.com/users/luoyunchong/received_events&quot;,
+   &quot;type&quot;: &quot;User&quot;,
+   &quot;site_admin&quot;: false,
+   &quot;name&quot;: &quot;IGeekFan&quot;,
+   &quot;company&quot;: null,
+   &quot;blog&quot;: &quot;https://blog.igeekfan.cn&quot;,
+   &quot;location&quot;: null,
+   &quot;email&quot;: &quot;luoyunchong@foxmail.com&quot;,
+   &quot;hireable&quot;: null,
+   &quot;bio&quot;: &quot;学习之路漫漫无期。&quot;,
+   &quot;public_repos&quot;: 14,
+   &quot;public_gists&quot;: 0,
+   &quot;followers&quot;: 16,
+   &quot;following&quot;: 11,
+   &quot;created_at&quot;: &quot;2016-04-22T10:33:44Z&quot;,
+   &quot;updated_at&quot;: &quot;2019-12-21T14:49:33Z&quot;
+}
+</code></pre></div><h2 id="net-core3-1"><a href="#net-core3-1" aria-hidden="true" class="header-anchor">#</a> .NET Core3.1</h2> <p>以下代码为主要代码，完整代码看下面的DEMO链接。</p> <p>使用WebApi时，看了一些项目，全是基于MVC结构的，都不是我想要的。看了一些博客上面介绍 ,步骤都是千篇一律，都是配合前后端分离的。</p> <ul><li>前端运行在:http://localhost:8081</li> <li>后端运行在:https://localhost:5001</li></ul> <h3 id="前后端分离的spa-配合第三方授权登录流程如下"><a href="#前后端分离的spa-配合第三方授权登录流程如下" aria-hidden="true" class="header-anchor">#</a> 前后端分离的SPA 配合第三方授权登录流程如下</h3> <p>本地测试时，gitHub回调地址设置 http(s)😕/ip:端口/signin-github</p> <ul><li>如: https://localhost:5001/signin-github。</li></ul> <h4 id="_1-上面这个明明填写的后端的地址，那后端怎么把结果通知前端呢？"><a href="#_1-上面这个明明填写的后端的地址，那后端怎么把结果通知前端呢？" aria-hidden="true" class="header-anchor">#</a> 1. 上面这个明明填写的后端的地址，那后端怎么把结果通知前端呢？</h4> <p>前端请求<strong>https://localhost:5001/signin?provider=GitHub&amp;redirectUrl=http://localhost:8080/login-result</strong></p> <ul><li>提供参数provider为GitHub，</li> <li>redirectUrl为GitHub授权登录后，回调signin-github后，后端再去重定向的地址，这里填前端的一个路由。</li></ul> <h4 id="_2-后端只提供了signin，signin-callback路由，没有signin-github，那github上配置的路由是怎么回调回来呢？"><a href="#_2-后端只提供了signin，signin-callback路由，没有signin-github，那github上配置的路由是怎么回调回来呢？" aria-hidden="true" class="header-anchor">#</a> 2. 后端只提供了signin，signin-callback路由，没有signin-github，那github上配置的路由是怎么回调回来呢？</h4> <p><a href="https://docs.microsoft.com/zh-cn/aspnet/core/security/authentication/social/google-logins?view=aspnetcore-3.1" target="_blank" rel="noopener noreferrer">google-登录，微软文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，其中有一个<strong>更改默认回调 URI</strong>,通过 AddGitHub中的CallbackPath属性配置。</p> <p>介绍了回调地址应配置signin-google,所以这里应该是signin-github，他是可以配置的，不需要自己写程序处理signin-google这个路由，内部有中间件已经处理了。</p> <h4 id="_3-回调到signin-github后，后端怎么处理，才能让前端刷新。获取登录后的信息呢。"><a href="#_3-回调到signin-github后，后端怎么处理，才能让前端刷新。获取登录后的信息呢。" aria-hidden="true" class="header-anchor">#</a> 3. 回调到signin-github后，后端怎么处理，才能让前端刷新。获取登录后的信息呢。</h4> <p>具体上面的根据code获取access_token，根据access_token获取用户的信息的过程，这些处理的过程，都不需要我们自己处理。我们可以用直接获取用户信息。</p> <p>一个方法SignIn,只要<strong>return Challenge(properties, provider);</strong>，</p> <ul><li>provider 为 GitHub，</li> <li>properties  var properties = new AuthenticationProperties { RedirectUri = url };</li></ul> <p>这个url为另一个获取用户信息的路由，只要拼接好地址即可。</p> <div class="language- extra-class"><pre class="language-text"><code>var authenticateResult = await _contextAccessor.HttpContext.AuthenticateAsync(provider);
+string email = authenticateResult.Principal.FindFirst(ClaimTypes.Email)?.Value;
+string name = authenticateResult.Principal.FindFirst(ClaimTypes.Name)?.Value;
+</code></pre></div><p>需要注入</p> <div class="language- extra-class"><pre class="language-text"><code>private readonly IHttpContextAccessor _contextAccessor;
+public AuthenticationController( IHttpContextAccessor contextAccessor)
+{
+    _contextAccessor = contextAccessor;
+}
+</code></pre></div><h3 id="代码部署（简化）"><a href="#代码部署（简化）" aria-hidden="true" class="header-anchor">#</a> 代码部署（简化）</h3> <p>打开NuGet包管理,安装包</p> <div class="language- extra-class"><pre class="language-text"><code>Install-Package AspNet.Security.OAuth.GitHub
+</code></pre></div><p>appSettings.json</p> <div class="language- extra-class"><pre class="language-text"><code>&quot;Authentication&quot;: {
+    &quot;GitHub&quot;: {
+      &quot;ClientId&quot;: &quot;0be6b05fc717bfc4fb67&quot;,
+      &quot;ClientSecret&quot;: &quot;dcaced9f176afba64e89d88b9b06ffc4a887a609&quot;
+    }
+}
+</code></pre></div><p>add扩展方法</p> <div class="language- extra-class"><pre class="language-text"><code>public static class JwtConfiguration
+{
+    public static void AddJwtConfiguration(this IServiceCollection services, IConfiguration configuration)
+    {
+
+        services.AddAuthentication(opts =&gt;
+            {
+                opts.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                opts.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddCookie(options =&gt;
+        {
+            options.LoginPath = &quot;/signin&quot;;
+            options.LogoutPath = &quot;/signout&quot;;
+        }).AddGitHub(options =&gt;
+        {
+            options.ClientId = configuration[&quot;Authentication:GitHub:ClientId&quot;];
+            options.ClientSecret = configuration[&quot;Authentication:GitHub:ClientSecret&quot;];
+        });
+    }
+}
+</code></pre></div><p>默认情况下，如头像，email，是没有获取的。</p> <div class="language- extra-class"><pre class="language-text"><code>.AddGitHub(options =&gt;
+{
+    options.ClientId = configuration[&quot;Authentication:GitHub:ClientId&quot;];
+    options.ClientSecret = configuration[&quot;Authentication:GitHub:ClientSecret&quot;];
+    //options.CallbackPath = new PathString(&quot;~/signin-github&quot;);//与GitHub上的回调地址相同，默认即是/signin-github
+    options.Scope.Add(&quot;user:email&quot;);
+    //authenticateResult.Principal.FindFirst(LinConsts.Claims.AvatarUrl)?.Value;  得到GitHub头像
+    options.ClaimActions.MapJsonKey(LinConsts.Claims.AvatarUrl, &quot;avatar_url&quot;);
+    options.ClaimActions.MapJsonKey(LinConsts.Claims.BIO, &quot;bio&quot;);
+    options.ClaimActions.MapJsonKey(LinConsts.Claims.BlogAddress, &quot;blog&quot;);
+});
+
+#其中LinConsts类为静态常量
+public static class LinConsts
+{
+    public static class Claims
+    {
+        public const string BIO = &quot;urn:github:bio&quot;;
+        public const string AvatarUrl = &quot;urn:github:avatar_url&quot;;
+        public const string BlogAddress = &quot;urn:github:blog&quot;;
+    }
+}
+</code></pre></div><p>startup.cs</p> <p>ConfigureServices中配置此服务</p> <div class="language- extra-class"><pre class="language-text"><code>    services.AddSingleton&lt;IHttpContextAccessor, HttpContextAccessor&gt;();
+    services.AddJwtConfiguration(Configuration);
+</code></pre></div><p>创建AuthenticationController.cs
+增加SignIn，用于处理用户授权成功后，重定回signin-callback,并将参数带回。</p> <div class="language- extra-class"><pre class="language-text"><code>        private readonly IHttpContextAccessor _contextAccessor;
+        private readonly IConfiguration _configuration;
+
+        public AuthenticationController(IHttpContextAccessor contextAccessor, IConfiguration configuration)
+        {
+            _contextAccessor = contextAccessor;
+            _configuration = configuration;
+        }
+        
+        [HttpGet(&quot;~/signin&quot;)]
+        public async Task&lt;IActionResult&gt; SignIn(string provider, string redirectUrl)
+        {
+            var request = _contextAccessor.HttpContext.Request;
+            var url =
+                $&quot;{request.Scheme}://{request.Host}{request.PathBase}{request.Path}-callback?provider={provider}&amp;redirectUrl={redirectUrl}&quot;;
+            var properties = new AuthenticationProperties { RedirectUri = url };
+            properties.Items[&quot;LoginProviderKey&quot;] = provider;
+            return Challenge(properties, provider);
+
+        }
+</code></pre></div><p>在signin方法中，用户点击授权后（第一次），会根据其传递的URL，重定向到这个地址，signin-callback,参数也会一同携带。provider为GitHub,redirectUrl为：http://localhost:8081/login-result.</p> <div class="language- extra-class"><pre class="language-text"><code>[HttpGet(&quot;~/signin-callback&quot;)]
+public async Task&lt;IActionResult&gt; Home(string provider = null, string redirectUrl = &quot;&quot;)
+{
+    var authenticateResult = await _contextAccessor.HttpContext.AuthenticateAsync(provider);
+    if (!authenticateResult.Succeeded) return Redirect(redirectUrl);
+    var openIdClaim = authenticateResult.Principal.FindFirst(ClaimTypes.NameIdentifier);
+    if (openIdClaim == null || string.IsNullOrWhiteSpace(openIdClaim.Value))
+        return Redirect(redirectUrl);
+
+    //TODO 记录授权成功后的信息 
+
+    string email = authenticateResult.Principal.FindFirst(ClaimTypes.Email)?.Value;
+    string name = authenticateResult.Principal.FindFirst(ClaimTypes.Name)?.Value;
+    string gitHubName = authenticateResult.Principal.FindFirst(GitHubAuthenticationConstants.Claims.Name)?.Value;
+    string gitHubUrl = authenticateResult.Principal.FindFirst(GitHubAuthenticationConstants.Claims.Url)?.Value;
+    //startup 中 AddGitHub配置项  options.ClaimActions.MapJsonKey(LinConsts.Claims.AvatarUrl, &quot;avatar_url&quot;);
+    string avatarUrl = authenticateResult.Principal.FindFirst(LinConsts.Claims.AvatarUrl)?.Value;
+
+    return Redirect($&quot;{redirectUrl}?openId={openIdClaim.Value}&quot;);
+}
+</code></pre></div><p>这时候我们能获取用户信息了。那么前端怎么办呢。我们写个方法，获取用户信息，看看效果。</p> <ul><li>浏览器直接打开能得到github的id。</li> <li>axios GET请求 https://localhost:5001/OpenId 得到null</li></ul> <div class="language- extra-class"><pre class="language-text"><code>[HttpGet(&quot;~/OpenId&quot;)]
+public async Task&lt;string&gt; OpenId(string provider = null)
+{
+   var authenticateResult = await _contextAccessor.HttpContext.AuthenticateAsync(provider);
+   if (!authenticateResult.Succeeded) return null;
+   var openIdClaim = authenticateResult.Principal.FindFirst(ClaimTypes.NameIdentifier);
+   return openIdClaim?.Value;
+}
+</code></pre></div><p>我记得之前传Token时，后台是可以这样获取的。</p> <div class="language- extra-class"><pre class="language-text"><code>[HttpGet(&quot;~/GetOpenIdByToken&quot;)]
+public string GetOpenIdByToken()
+{
+    return User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+}
+</code></pre></div><p>LoginResult.vue在created生命周期中。都是得到null</p> <div class="language- extra-class"><pre class="language-text"><code>axios({
+  methods: &quot;get&quot;,
+  url: &quot;https://localhost:5001/OpenId?provider=GitHub&quot;
+})
+  .then(function(response) {
+    // handle success
+    console.log(response);
+  })
+
+axios({
+  methods: &quot;get&quot;,
+  url: &quot;https://localhost:5001/GetOpenIdByToken&quot;
+})
+  .then(function(response) {
+    // handle success
+    console.log(response);
+  })
+</code></pre></div><h3 id="为什么呢？？？"><a href="#为什么呢？？？" aria-hidden="true" class="header-anchor">#</a> 为什么呢？？？</h3> <p>因为前后端分离，不是基于Cookies的。http是无状态的。每次请求无法区分用户的。我们可以根据当前的ClaimsPrincipal，根据JWT生成相应的Token，axios请求时，放到headers中。</p> <p>安装包</p> <div class="language- extra-class"><pre class="language-text"><code>Install-Package Microsoft.AspNetCore.Authentication.JwtBearer
+</code></pre></div><p>AppSettings.json配置改成</p> <div class="language- extra-class"><pre class="language-text"><code>&quot;Authentication&quot;: {
+&quot;JwtBearer&quot;: {
+  &quot;SecurityKey&quot;: &quot;JWTStudyWebsite_DI20DXU3&quot;,
+  &quot;Issuer&quot;: &quot;JWTStudy&quot;,
+  &quot;Audience&quot;: &quot;JWTStudyWebsite&quot;
+},
+&quot;GitHub&quot;: {
+  &quot;ClientId&quot;: &quot;0be6b05fc717bfc4fb67&quot;,
+  &quot;ClientSecret&quot;: &quot;dcaced9f176afba64e89d88b9b06ffc4a887a609&quot;
+}
+}
+</code></pre></div><p>在signin-callback路由中，得到authenticateResult.Principal，其中默认包含了(id,login,name,url)，授权得到eamil，另外MapJsonKey扩展了以下字段（avatar_url、bio、blog)</p> <div class="language- extra-class"><pre class="language-text"><code>var authenticateResult = await _contextAccessor.HttpContext.AuthenticateAsync(provider);
+string token = this.CreateToken(authenticateResult.Principal);
+</code></pre></div><p>根据ClaimsPrincipal值生成token值。</p> <div class="language- extra-class"><pre class="language-text"><code>private string CreateToken(ClaimsPrincipal claimsPrincipal)
+{
+
+    var handler = new JwtSecurityTokenHandler();
+    var key = new SymmetricSecurityKey(
+        Encoding.UTF8.GetBytes(_configuration[&quot;Authentication:JwtBearer:SecurityKey&quot;]));
+    var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+    var token = new JwtSecurityToken(
+        _configuration[&quot;Authentication:JwtBearer:Issuer&quot;],
+        _configuration[&quot;Authentication:JwtBearer:Audience&quot;],
+        claimsPrincipal.Claims,
+        expires: DateTime.Now.AddMinutes(30),
+        signingCredentials: credentials
+    );
+
+    return handler.WriteToken(token);
+}
+</code></pre></div><p>这里的claimsPrincipal是什么呢。简单的说就是一个存有github授权信息的对象，可以解析出对应的Clamis，这里其实就是用了Clamis的属性值。</p> <table><thead><tr><th>Claim</th> <th>ClaimsIdentity</th> <th>ClaimsPrincipal</th></tr></thead> <tbody><tr><td>id、name,url,email,avatar_url等</td> <td>由多组Claim组成，这里可指GitHub授权登录后得到的那个对象。</td> <td>ClaimsIdentity的持有者</td></tr></tbody></table> <p>具体Jwt的生成与配置项。这里不详细说明。可以看这个示例（.NET Core2.2）<a href="https://github.com/luoyunchong/BasicTemplate" target="_blank" rel="noopener noreferrer">https://github.com/luoyunchong/BasicTemplate<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>AddJwtConfiguration改成如下内容</p> <div class="language- extra-class"><pre class="language-text"><code>public static void AddJwtConfiguration(this IServiceCollection services, IConfiguration configuration)
+{
+
+    services.AddAuthentication(opts =&gt;
+        {
+            opts.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            opts.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddCookie(options =&gt;
+    {
+        options.LoginPath = &quot;/signin&quot;;
+        options.LogoutPath = &quot;/signout&quot;;
+    }).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =&gt;
+    {
+        options.Audience = configuration[&quot;Authentication:JwtBearer:Audience&quot;];
+
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            // The signing key must match!
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.ASCII.GetBytes(configuration[&quot;Authentication:JwtBearer:SecurityKey&quot;])),
+
+            // Validate the JWT Issuer (iss) claim
+            ValidateIssuer = true,
+            ValidIssuer = configuration[&quot;Authentication:JwtBearer:Issuer&quot;],
+
+            // Validate the JWT Audience (aud) claim
+            ValidateAudience = true,
+            ValidAudience = configuration[&quot;Authentication:JwtBearer:Audience&quot;],
+
+            // Validate the token expiry
+            ValidateLifetime = true,
+
+            // If you want to allow a certain amount of clock drift, set that here
+            //ClockSkew = TimeSpan.Zero
+        };
+    }).AddGitHub(options =&gt;
+    {
+        options.ClientId = configuration[&quot;Authentication:GitHub:ClientId&quot;];
+        options.ClientSecret = configuration[&quot;Authentication:GitHub:ClientSecret&quot;];
+        //options.CallbackPath = new PathString(&quot;~/signin-github&quot;);//与GitHub上的回调地址相同，默认即是/signin-github
+        options.Scope.Add(&quot;user:email&quot;);
+        //authenticateResult.Principal.FindFirst(LinConsts.Claims.AvatarUrl)?.Value;  得到GitHub头像
+        options.ClaimActions.MapJsonKey(LinConsts.Claims.AvatarUrl, &quot;avatar_url&quot;);
+        options.ClaimActions.MapJsonKey(LinConsts.Claims.BIO, &quot;bio&quot;);
+        options.ClaimActions.MapJsonKey(LinConsts.Claims.BlogAddress, &quot;blog&quot;);
+    });
+}
+</code></pre></div><p><a href="https://github.com/luoyunchong/dotnetcore-examples/blob/master/dotnetcore3.1/VoVo.AspNetCore.OAuth2/spa-vue-oauth2/src/components/LoginResult.vue" target="_blank" rel="noopener noreferrer">前端LoginResult.vue代码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>前端运行</p> <div class="language- extra-class"><pre class="language-text"><code>yarn install
+yarn serve
+</code></pre></div><p>点击GitHub登录</p> <p>GetOpenIdByToken根据生成的token值，解析出了用户id,这样前端在login-result这个组件中，把token保存好，并重定向自己的主页，获取用户所有信息即可。</p> <div class="language- extra-class"><pre class="language-text"><code>data: 18613266
+status: 200
+config: {url: &quot;https://localhost:5001/GetOpenIdByToken&quot;}
+</code></pre></div><p>OpenId?provider=GitHub则得不到数据，只能浏览器直接请求https://localhost:5001/OpenId?provider=GitHub，才能到github 的id。这个适应于前后端不分离，或者属于之前我们经常使用MVC结构，同一域名下，同一端口，基于Cookies登录的判断。</p> <h2 id="参考"><a href="#参考" aria-hidden="true" class="header-anchor">#</a> 参考</h2> <ul><li><a href="https://www.cnblogs.com/rsls/p/10522649.html" target="_blank" rel="noopener noreferrer">.net Core2.2 WebApi通过OAuth2.0实现微信登录<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://blog.csdn.net/weixin_30414305/article/details/101389325" target="_blank" rel="noopener noreferrer">AspNetCore3.0 和 JWT<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://www.woshipm.com/pd/509712.html" target="_blank" rel="noopener noreferrer">用户系统设计：第三方授权、账号绑定及解绑（下）<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h2 id="demo-示例"><a href="#demo-示例" aria-hidden="true" class="header-anchor">#</a> Demo  示例</h2> <ul><li>GitHub <a href="https://github.com/luoyunchong/dotnetcore-examples/tree/master/dotnetcore3.1/VoVo.AspNetCore.OAuth2" target="_blank" rel="noopener noreferrer">https://github.com/luoyunchong/dotnetcore-examples/tree/master/dotnetcore3.1/VoVo.AspNetCore.OAuth2<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <div data-v-49481e8d><ul class="rightMenuWrapper" data-v-49481e8d></ul></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/luoyunchong/vuepress-docs/edit/master/vuepress-docs/dotnetcore/lin-cms/spa-github-login.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">1/6/2020, 6:15:21 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html" class="prev">
+          认证与授权
+        </a></span> <!----></p></div> </div> <!----> <img src="" style="position:absolute;width:135px;left:calc(100% / 2 + 50px);bottom:10px;transform:translateX(-50%);"></div></div>
+    <script src="/vuepress-docs/assets/js/app.ec2f6e9b.js" defer></script><script src="/vuepress-docs/assets/js/18.97b5de89.js" defer></script>
+  </body>
+</html>

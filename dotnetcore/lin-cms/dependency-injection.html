@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="referrer" content="never">
+    <title>依赖注入 | IGeekFan的文档</title>
+    <meta name="description" content="">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f62432d3079a350db0193368fa897809";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <link rel="icon" href="/vuepress-docs/logo.png">
+    
+    <link rel="preload" href="/vuepress-docs/assets/css/styles.ec2f6e9b.css" as="style"><link rel="preload" href="/vuepress-docs/assets/js/app.ec2f6e9b.js" as="script"><link rel="preload" href="/vuepress-docs/assets/js/11.9f5d4ce3.js" as="script"><link rel="prefetch" href="/vuepress-docs/assets/css/2.styles.7e867c4e.css"><link rel="prefetch" href="/vuepress-docs/assets/css/3.styles.e9745365.css"><link rel="prefetch" href="/vuepress-docs/assets/css/4.styles.6c1c8010.css"><link rel="prefetch" href="/vuepress-docs/assets/css/5.styles.82af18d5.css"><link rel="prefetch" href="/vuepress-docs/assets/js/1.e59787bb.js"><link rel="prefetch" href="/vuepress-docs/assets/js/10.3aef6520.js"><link rel="prefetch" href="/vuepress-docs/assets/js/12.b9ca9a1d.js"><link rel="prefetch" href="/vuepress-docs/assets/js/13.a66f1786.js"><link rel="prefetch" href="/vuepress-docs/assets/js/14.d6b910a3.js"><link rel="prefetch" href="/vuepress-docs/assets/js/15.a169035c.js"><link rel="prefetch" href="/vuepress-docs/assets/js/16.3dd955fe.js"><link rel="prefetch" href="/vuepress-docs/assets/js/17.930ad6d0.js"><link rel="prefetch" href="/vuepress-docs/assets/js/18.97b5de89.js"><link rel="prefetch" href="/vuepress-docs/assets/js/19.104c4105.js"><link rel="prefetch" href="/vuepress-docs/assets/js/2.7e867c4e.js"><link rel="prefetch" href="/vuepress-docs/assets/js/20.dc33c1d8.js"><link rel="prefetch" href="/vuepress-docs/assets/js/3.e9745365.js"><link rel="prefetch" href="/vuepress-docs/assets/js/4.6c1c8010.js"><link rel="prefetch" href="/vuepress-docs/assets/js/5.82af18d5.js"><link rel="prefetch" href="/vuepress-docs/assets/js/6.cb54c925.js"><link rel="prefetch" href="/vuepress-docs/assets/js/7.44ba2142.js"><link rel="prefetch" href="/vuepress-docs/assets/js/8.f4c00805.js"><link rel="prefetch" href="/vuepress-docs/assets/js/9.83b8ffee.js">
+    <link rel="stylesheet" href="/vuepress-docs/assets/css/styles.ec2f6e9b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" style="position:relative;"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <div class="home-link router-link-active"><!----> <span class="site-name">IGeekFan的文档</span></div> <div class="search" style="max-width:-300px;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" placeholder="回车搜索" value=""> <!----></div></div> <div class="links" style="max-width:-300px;"><nav class="nav-links can-hide"><div class="nav-item"><a href="/vuepress-docs/" class="nav-link">简介</a></div><div class="nav-item"><a href="/vuepress-docs/dotnetcore/lin-cms/" class="nav-link router-link-active">lin-cms-dotnetcore起步</a></div><div class="nav-item"><a href="/vuepress-docs/colorui/docs/" class="nav-link">ColorUI指南</a></div><div class="nav-item"><a href="http://blog.igeekfan.cn/about/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/luoyunchong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/vuepress-docs/" class="nav-link">简介</a></div><div class="nav-item"><a href="/vuepress-docs/dotnetcore/lin-cms/" class="nav-link router-link-active">lin-cms-dotnetcore起步</a></div><div class="nav-item"><a href="/vuepress-docs/colorui/docs/" class="nav-link">ColorUI指南</a></div><div class="nav-item"><a href="http://blog.igeekfan.cn/about/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/luoyunchong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav> <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>lin-cms-dotnetcore</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>开发者文档</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html" class="sidebar-link">开发起步</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#项目结构" class="sidebar-link">项目结构</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#类库使用介绍" class="sidebar-link">类库使用介绍</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#freesql" class="sidebar-link">FreeSql</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html#identityserver4" class="sidebar-link">IdentityServer4</a></li></ul></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html" class="active sidebar-link">依赖注入</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#scrutor" class="sidebar-link">Scrutor</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#serivce后缀服务注入di" class="sidebar-link">Serivce后缀服务注入DI</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#itransientdependency" class="sidebar-link">ITransientDependency</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#接口" class="sidebar-link">接口</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#模拟实现" class="sidebar-link">模拟实现</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#如何使用" class="sidebar-link">如何使用</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dependency-injection.html#统一注入" class="sidebar-link">统一注入</a></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html" class="sidebar-link">认证与授权</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html#认证与授权" class="sidebar-link">认证与授权</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html#认证鉴权相关" class="sidebar-link">认证鉴权相关</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html#jwt" class="sidebar-link">JWT</a></li></ul></li><li><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html" class="sidebar-link">GitHub第三方授权登录</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#github第三方授权登录" class="sidebar-link">GitHub第三方授权登录</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#aspnet-security-oauth-github" class="sidebar-link">AspNet.Security.OAuth.GitHub</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#github授权登录" class="sidebar-link">GitHub授权登录</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#net-core3-1" class="sidebar-link">.NET Core3.1</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#前后端分离的spa-配合第三方授权登录流程如下" class="sidebar-link">前后端分离的SPA 配合第三方授权登录流程如下</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#代码部署（简化）" class="sidebar-link">代码部署（简化）</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#为什么呢？？？" class="sidebar-link">为什么呢？？？</a></li></ul></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#参考" class="sidebar-link">参考</a></li><li class="sidebar-sub-header"><a href="/vuepress-docs/dotnetcore/lin-cms/spa-github-login.html#demo-示例" class="sidebar-link">Demo  示例</a></li></ul></li></ul></div></li></ul></div> <div id="area" class="page"> <div class="content"><h1 id="依赖注入"><a href="#依赖注入" aria-hidden="true" class="header-anchor">#</a> 依赖注入</h1> <p>官网介绍</p> <p><a href="https://docs.microsoft.com/zh-cn/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2" target="_blank" rel="noopener noreferrer">https://docs.microsoft.com/zh-cn/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.2<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="scrutor"><a href="#scrutor" aria-hidden="true" class="header-anchor">#</a> Scrutor</h2> <ul><li>开源地址<a href="https://github.com/khellang/Scrutor" target="_blank" rel="noopener noreferrer">https://github.com/khellang/Scrutor<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li>参考文档 <a href="https://www.cnblogs.com/catcher1994/p/10316928.html" target="_blank" rel="noopener noreferrer">https://www.cnblogs.com/catcher1994/p/10316928.html<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+手动管理依赖注入过于麻烦,当有多个仓储，服务，无法统一注入，Scrutor能帮助我们简化ASP.NET Core的DI注册。</li></ul> <p>在ConfigServices中，我们原本需要这样子依次注入仓储，服务和其他接口及实现，当有多个仓储时，这样就过于繁琐。</p> <div class="language- extra-class"><pre class="language-text"><code>services.AddTransient&lt;IUserRepository, UserRepository&gt;();
+services.AddTransient&lt;IUserService, UserService&gt;();
+services.AddTransient&lt;ICurrentUser, CurrentUser&gt;();
+</code></pre></div><h2 id="serivce后缀服务注入di"><a href="#serivce后缀服务注入di" aria-hidden="true" class="header-anchor">#</a> Serivce后缀服务注入DI</h2> <p>当我们有多个Service后缀的服务时，使用以下方法，可将服务扫描只留下以Serivce结尾的类，将其类型注册为提供所有公共接口生成服务，其生命周期为Transient，</p> <div class="language- extra-class"><pre class="language-text"><code>services.Scan(scan =&gt; scan
+        //加载Startup这个类所在的程序集
+        .FromAssemblyOf&lt;Startup&gt;()
+        // 表示要注册那些类，上面的代码还做了过滤，只留下了以 Service 结尾的类
+        .AddClasses(classes =&gt; classes.Where(t =&gt; t.Name.EndsWith(&quot;Service&quot;, StringComparison.OrdinalIgnoreCase)))
+        //表示将类型注册为提供其所有公共接口作为服务
+        .AsImplementedInterfaces()
+        //表示注册的生命周期为 Transient
+        .WithTransientLifetime()
+         );
+
+</code></pre></div><h2 id="itransientdependency"><a href="#itransientdependency" aria-hidden="true" class="header-anchor">#</a> ITransientDependency</h2> <p>新建一个空接口，当其他类继承此接口后，统一注入到DI中，以Transient的生命周期。</p> <div class="language- extra-class"><pre class="language-text"><code>namespace LinCms.Zero.Dependency
+{
+    public interface ITransientDependency
+    {
+    }
+}
+</code></pre></div><h2 id="接口"><a href="#接口" aria-hidden="true" class="header-anchor">#</a> 接口</h2> <div class="language- extra-class"><pre class="language-text"><code>public interface ICurrentUser
+{
+    int? Id { get; }
+
+    int? GroupId { get; }
+
+    bool? IsAdmin { get; }
+}
+</code></pre></div><h2 id="模拟实现"><a href="#模拟实现" aria-hidden="true" class="header-anchor">#</a> 模拟实现</h2> <div class="language- extra-class"><pre class="language-text"><code>    public class CurrentUser : ICurrentUser, ITransientDependency
+    {
+     
+        public int? Id =&gt; 1;
+        public int? GroupId =&gt; 2;
+        public bool? IsAdmin =&gt; true;
+    }
+</code></pre></div><p>扫描所有继承ITransientDependency的实现。</p> <div class="language- extra-class"><pre class="language-text"><code>   services.Scan(scan =&gt; scan
+       // We start out with all types in the assembly of ITransientService
+        .FromAssemblyOf&lt;ITransientDependency&gt;()
+        // AddClasses starts out with all public, non-abstract types in this assembly.
+        // These types are then filtered by the delegate passed to the method.
+        // In this case, we filter out only the classes that are assignable to ITransientService.
+        .AddClasses(classes =&gt; classes.AssignableTo&lt;ITransientDependency&gt;())
+        // We then specify what type we want to register these classes as.
+        // In this case, we want to register the types as all of its implemented interfaces.
+        // So if a type implements 3 interfaces; A, B, C, we'd end up with three separate registrations.
+        .AsImplementedInterfaces()
+        // And lastly, we specify the lifetime of these registrations.
+        .WithTransientLifetime()
+         );
+
+</code></pre></div><h2 id="如何使用"><a href="#如何使用" aria-hidden="true" class="header-anchor">#</a> 如何使用</h2> <p>在其他类中使用此接口</p> <div class="language- extra-class"><pre class="language-text"><code>[ApiController]
+[Route(&quot;cms/user&quot;)]
+public class UserController : ControllerBase
+{
+    private readonly ICurrentUser _currentUser;
+
+    public UserController(ICurrentUser currentUser)
+    {
+        _currentUser = currentUser;
+    }
+
+    [HttpGet]
+    public int GetUser()
+    {
+        return _currentUser.Id;
+    }
+}
+</code></pre></div><h2 id="统一注入"><a href="#统一注入" aria-hidden="true" class="header-anchor">#</a> 统一注入</h2> <p>当然，我们可以统一注入，而非写二次servics.Scan</p> <div class="language- extra-class"><pre class="language-text"><code>services.Scan(scan =&gt; scan
+            .FromAssemblyOf&lt;Startup&gt;()
+            .AddClasses(classes =&gt; classes.Where(t =&gt; t.Name.EndsWith(&quot;Service&quot;,StringComparison.OrdinalIgnoreCase)))
+            .AsImplementedInterfaces()
+            .WithTransientLifetime()
+            .FromAssemblyOf&lt;ITransientDependency&gt;()
+            .AddClasses(classes =&gt; classes.AssignableTo&lt;ITransientDependency&gt;())
+            .AsImplementedInterfaces()
+            .WithTransientLifetime()
+      );
+</code></pre></div><div data-v-49481e8d><ul class="rightMenuWrapper" data-v-49481e8d></ul></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/luoyunchong/vuepress-docs/edit/master/vuepress-docs/dotnetcore/lin-cms/dependency-injection.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">10/8/2019, 1:41:22 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/vuepress-docs/dotnetcore/lin-cms/dev-start.html" class="prev">
+          开发起步
+        </a></span> <span class="next"><a href="/vuepress-docs/dotnetcore/lin-cms/dynamic-authorization-in-asp-net-core.html">
+          认证与授权
+        </a>
+        →
+      </span></p></div> </div> <!----> <img src="" style="position:absolute;width:135px;left:calc(100% / 2 + 50px);bottom:10px;transform:translateX(-50%);"></div></div>
+    <script src="/vuepress-docs/assets/js/app.ec2f6e9b.js" defer></script><script src="/vuepress-docs/assets/js/11.9f5d4ce3.js" defer></script>
+  </body>
+</html>
